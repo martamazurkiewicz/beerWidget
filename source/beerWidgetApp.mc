@@ -2,7 +2,7 @@ import Toybox.Application;
 import Toybox.Lang;
 import Toybox.WatchUi;
 
-class beer_widgetApp extends Application.AppBase {
+class beerWidgetApp extends Application.AppBase {
 
     function initialize() {
         AppBase.initialize();
@@ -18,11 +18,11 @@ class beer_widgetApp extends Application.AppBase {
 
     // Return the initial view of your application here
     function getInitialView() as Array<Views or InputDelegates>? {
-        return [ new beer_widgetView() ] as Array<Views or InputDelegates>;
+        return [ new beerWidgetView("test message") ] as Array<Views or InputDelegates>;
     }
 
 }
 
-function getApp() as beer_widgetApp {
-    return Application.getApp() as beer_widgetApp;
+function getApp() as beerWidgetApp {
+    return Application.getApp() as beerWidgetApp;
 }

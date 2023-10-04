@@ -1,0 +1,4 @@
+# application secrets
+.secrets/*
+# debugging files
+bin/*
