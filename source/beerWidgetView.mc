@@ -34,12 +34,12 @@ class beerWidgetView extends WatchUi.View {
         staticText = new WatchUi.Text({
             :text=>"Your active calories translates to",
             :color=>Graphics.COLOR_WHITE,
-            :font=>Graphics.FONT_LARGE,
+            //:font=>Graphics.FONT_LARGE,
             //:locX=>WatchUi.LAYOUT_HALIGN_CENTER,
             //:locY=>WatchUi.LAYOUT_VALIGN_TOP,
-            :size=>Graphics.FONT_SMALL,
-            :justification=>Graphics.TEXT_JUSTIFY_CENTER,
-            :width=>self.mySettings.screenWidth/2,
+            //:size=>Graphics.FONT_SMALL,
+            //:justification=>Graphics.TEXT_JUSTIFY_CENTER,
+            :width=>self.mySettings.screenWidth/4,
             :height=>self.mySettings.screenHeight/2+5*Graphics.getFontHeight(Graphics.FONT_SMALL)
         });
         // dynamicText = new WatchUi.Text({
@@ -61,10 +61,40 @@ class beerWidgetView extends WatchUi.View {
         //staticText.draw(dc);
         //dynamicText.draw(dc);
         dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
+        //deviceWidth=dc.getWidth(); 
+        //deviceHeight=dc.getHeight();
         //dc.setColor(0, Graphics.COLOR_WHITE);
-        dc.drawText(self.mySettings.screenWidth/2, self.mySettings.screenHeight/2-2*Graphics.getFontHeight(Graphics.FONT_SMALL), Graphics.FONT_SMALL, "Your active calories translates to", Graphics.TEXT_JUSTIFY_CENTER);
+        //dc.drawText(self.mySettings.screenWidth/4, self.mySettings.screenHeight/2-2*Graphics.getFontHeight(Graphics.FONT_SMALL), Graphics.FONT_SMALL, "Your active calories translates to", Graphics.TEXT_JUSTIFY_CENTER);
+        // 1/4 and 3/8
+        // 4/8 and 3/8
+        // 8/16 and 6/16
+        // 7/16+x=1/2
+        // x=1/2-7/16
+        // x=1/16
+
+        // 5/8
+        // (3/8)/2 = 3/16
+
+        // 10/16-3/16=13/16 
+
+
+
+        
+        var font = Graphics.FONT_XTINY;
+        dc.drawText(
+            5*dc.getWidth()/8, 
+            5*dc.getHeight()/16, 
+            font,
+            Graphics.fitTextToArea(
+                "Your active calories translates to", 
+                font, 
+                dc.getWidth()-5*dc.getWidth()/8, 
+                3*dc.getHeight()/8, 
+                true),
+            Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
         //dynamicText.drawText(x, y, font, text, justification);
-        dc.drawLine(0,self.mySettings.screenHeight/2, self.mySettings.screenWidth,self.mySettings.screenHeight/2);
+        dc.drawLine(
+            6*dc.getWidth()/16,dc.getHeight()/2,14*dc.getWidth()/16,dc.getHeight()/2);
     }
 
     // Called when this View is removed from the screen. Save the
