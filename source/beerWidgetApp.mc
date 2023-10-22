@@ -18,7 +18,7 @@ class beerWidgetApp extends Application.AppBase {
 
     // Return the initial view of your application here
     function getInitialView() as Array<Views or InputDelegates>? {
-        return [ new beerWidgetView("test message") ] as Array<Views or InputDelegates>;
+        return [ new beerWidgetView("-2") ] as Array<Views or InputDelegates>;
     }
 
 }
