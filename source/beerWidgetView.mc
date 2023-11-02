@@ -56,6 +56,17 @@ class beerWidgetView extends WatchUi.View {
             dc.getHeight()/2,
             lineFinishWidth,
             dc.getHeight()/2);
+        dc.drawText(
+            dc.getWidth()/2, 
+            3*dc.getHeight()/4, 
+            Graphics.FONT_SMALL,
+            Graphics.fitTextToArea(
+                "3 0% beers", 
+                Graphics.FONT_SMALL, 
+                dc.getWidth(), 
+                dc.getHeight()/2, 
+                false),
+            Graphics.TEXT_JUSTIFY_CENTER | Graphics.TEXT_JUSTIFY_VCENTER);
     }
 
     // Called when this View is removed from the screen. Save the
