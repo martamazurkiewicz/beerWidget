@@ -1,7 +1,4 @@
 <drawables>
-    <!-- <drawable-list id="shapes" background="Graphics.COLOR_TRANSPARENT">
-        <shape type="rectangle" x="51" y="137" width="76" height="20" color="Graphics.COLOR_RED" />
-    </drawable-list> -->
-    <!-- <bitmap id="LauncherIcon" filename="launcher_icon.png" /> -->
-    <bitmap id="id_bootle" x="left" y="center" filename="bottle.png" />
+    <bitmap id="LauncherIcon" filename="launcher_icon.png" />
+    <bitmap id="id_bottle" filename="bottle.png" />
 </drawables>

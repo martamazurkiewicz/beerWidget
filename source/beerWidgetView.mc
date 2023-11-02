@@ -5,11 +5,14 @@ import Toybox.System;
 class beerWidgetView extends WatchUi.View {
     
     var message_field;
+    var bottle_bitmap;
+    private var _bitmap as BitmapResource;
 
     function initialize(message) {
         View.initialize();
         self.message_field = message;
         System.println(message);
+        _bitmap = Application.loadResource( Rez.Drawables.id_bottle ) as BitmapResource;
     }
 
     // Load your resources here
@@ -36,7 +39,7 @@ class beerWidgetView extends WatchUi.View {
         var lineStartWidth = middlePointOfTextWidth - spaceAvailableForTextWidth/2 - .1*middlePointOfTextWidth;
         var lineFinishWidth = middlePointOfTextWidth + spaceAvailableForTextWidth/2 + .1*middlePointOfTextWidth;
         var font = Graphics.FONT_XTINY;
-
+        dc.drawBitmap(lineStartWidth-_bitmap.getWidth(), dc.getHeight()/2-_bitmap.getHeight(), _bitmap);
         dc.drawText(
             middlePointOfTextWidth, 
             middlePointOfTextHeight, 
