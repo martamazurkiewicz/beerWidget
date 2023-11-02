@@ -59,10 +59,10 @@ class beerWidgetView extends WatchUi.View {
         dc.drawText(
             dc.getWidth()/2, 
             3*dc.getHeight()/4, 
-            Graphics.FONT_SMALL,
+            Graphics.FONT_MEDIUM,
             Graphics.fitTextToArea(
-                "3 0% beers", 
-                Graphics.FONT_SMALL, 
+                "12 non-alcoholic beers", 
+                Graphics.FONT_MEDIUM, 
                 dc.getWidth(), 
                 dc.getHeight()/2, 
                 false),
