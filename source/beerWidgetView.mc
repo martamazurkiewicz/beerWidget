@@ -1,10 +1,11 @@
 import Toybox.Graphics;
 import Toybox.WatchUi;
 import Toybox.System;
+import Toybox.Lang;
 
 class beerWidgetView extends WatchUi.View {
     
-    var beer_nr;
+    var beer_nr as Number;
     private var _bitmap as BitmapResource;
 
     function initialize(beer_nr) {
