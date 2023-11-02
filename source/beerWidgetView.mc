@@ -4,14 +4,12 @@ import Toybox.System;
 
 class beerWidgetView extends WatchUi.View {
     
-    var message_field;
-    var bottle_bitmap;
+    var beer_nr;
     private var _bitmap as BitmapResource;
 
-    function initialize(message) {
+    function initialize(beer_nr) {
         View.initialize();
-        self.message_field = message;
-        System.println(message);
+        self.beer_nr = beer_nr;
         _bitmap = Application.loadResource( Rez.Drawables.id_bottle ) as BitmapResource;
     }
 
@@ -61,7 +59,7 @@ class beerWidgetView extends WatchUi.View {
             3*dc.getHeight()/4, 
             Graphics.FONT_MEDIUM,
             Graphics.fitTextToArea(
-                "12 non-alcoholic beers", 
+                self.beer_nr + " non-alcoholic beers", 
                 Graphics.FONT_MEDIUM, 
                 dc.getWidth(), 
                 dc.getHeight()/2, 
