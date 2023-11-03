@@ -18,7 +18,8 @@ class beerWidgetApp extends Application.AppBase {
 
     // Return the initial view of your application here
     function getInitialView() as Array<Views or InputDelegates>? {
-        var _beerCounter = new BeerCounter(650);
+        var _activeCalories = new ActiveCalories();
+        var _beerCounter = new BeerCounter(_activeCalories.getActiveCalories());
         return [ new beerWidgetView(_beerCounter.getBeerBottlesNumber()) ] as Array<Views or InputDelegates>;
     }
 
